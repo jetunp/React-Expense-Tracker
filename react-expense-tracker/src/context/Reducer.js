@@ -8,10 +8,10 @@ export default (state,action) => {
                 ...state, 
                 transactions: state.transactions.filter(transaction => transaction.id !== action.payload)
             }
-         case 'DELETE_TRANSACTION':
+         case 'ADD_TRANSACTION':
             return {
                 ...state, 
-                transactions: state.transactions.map(transaction => transaction)
+                transactions: [action.payload, ...state.transactions]
             }
         default:
             return state

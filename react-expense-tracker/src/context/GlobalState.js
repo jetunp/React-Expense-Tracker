@@ -3,12 +3,7 @@ import Reducer from './Reducer';
 
 //Initial state: The value you want the state to be initally, this arg is ignored after initial render
 const initalState = {
-    transactions: [
-          { id: 1, text: 'Flower', amount: -20 },
-          { id: 2, text: 'Salary', amount: 300 },
-          { id: 3, text: 'Book', amount: -10 },
-          { id: 4, text: 'Camera', amount: 150 }
-    ] 
+    transactions: []
 }
 
 //Create global context that lets you pass info deep down to other components
@@ -31,7 +26,7 @@ export const GlobalProvider = ({children}) => {
         })
     }
 
-    const addTransaction = ({transaction}) => {
+    const addTransaction = (transaction) => {
         dispatch({
             type:'ADD_TRANSACTION',
             //payload is basically any data we want to send with our action
